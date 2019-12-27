@@ -85,13 +85,13 @@
 <meta property="og:url" content="https://zxingshawn.github.io/2019/12/27/iOS-%E4%BB%A5View-ViewModel%E5%BD%A2%E5%BC%8F%E6%9E%84%E5%BB%BAUI%E7%BB%84%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Sean的博客">
 <meta property="og:description" content="View-ViewModel以View-ViewModel形式构建UI组件，MVVM，MVC等模式通用。 问题UI组件作为APP内部复用概率最高的代码，更是复制粘贴的重灾区，其原因在于UI组中间包含大量的业务逻辑，导致一个UI组件复用到另一个业务下非常困难，主要体现在：  UI组件与业务数据相绑定； UI组件内部处理了业务逻辑；">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/12/27/16f452d4420a5eed?w=516&h=409&f=png&s=23965">
+<meta property="og:image" content="https://zxingshawn.github.io/2019/12/27/iOS-%E4%BB%A5View-ViewModel%E5%BD%A2%E5%BC%8F%E6%9E%84%E5%BB%BAUI%E7%BB%84%E4%BB%B6/jiagou.png">
 <meta property="article:published_time" content="2019-12-27T02:35:32.000Z">
-<meta property="article:modified_time" content="2019-12-27T02:47:54.457Z">
+<meta property="article:modified_time" content="2019-12-27T02:55:22.538Z">
 <meta property="article:author" content="Sean">
 <meta property="article:tag" content="架构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/12/27/16f452d4420a5eed?w=516&h=409&f=png&s=23965">
+<meta name="twitter:image" content="https://zxingshawn.github.io/2019/12/27/iOS-%E4%BB%A5View-ViewModel%E5%BD%A2%E5%BC%8F%E6%9E%84%E5%BB%BAUI%E7%BB%84%E4%BB%B6/jiagou.png">
 
 
 
@@ -363,8 +363,7 @@
 <li>UI组件内部不能处理业务逻辑（其本职工作仅是UI展示）</li>
 </ul>
 <p>此时，MVVM模式模式应该要进入我们的视线了，在该模式中ViewModel的存在是不是很好的解决了上面的问题。我们知道在MVVM中，ViewModel向上为View提供展示数据（该数据已经在ViewModel中处理好了，View无需任何处理，只要展示即可），向下接受来自业务层的数据，处理相关的业务逻辑。<br>可以看出，ViewModel作为中间层很好的将业务与UI隔离。但MVVM，很多同学并不喜欢，觉得其中的Data-Binding很麻烦。<br>因此本Demo构建UI组件时用到的是View-ViewModel结构，并不要求一定是MVVM，在MVC模式下也可以使用。<br>同时我们采用的是面向接口的模式，View对外依赖的是接口（protocol） 而不是某个具体的ViewModel，每个UI组件其结构如下图：</p>
-<img src="https://user-gold-cdn.xitu.io/2019/12/27/16f452d4420a5eed?w=516&h=409&f=png&s=23965" width=516 height=409 />
-
+<p><img src="jiagou.png" alt="图片"></p>
 <p>如上图所示，若某个UI组件被多个业务复用，可以根据需求定义多个ViewModel以处理不同的业务逻辑，每个ViewModel都实现ViewModelProtocol协议为View提供数据。</p>
 <p>通过ViewModel这个中间层很好的隔离了UI与业务逻辑，使UI复用性更好，不仅提高了开发效率，也规范了代码结构。</p>
 <p>详见<a href="https://github.com/zxingshawn/View-ViewModel" target="_blank" rel="noopener">demo</a></p>
@@ -408,7 +407,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/27/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EResponsderChain%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/" rel="prev" title="一种基于ResponsderChain的对象交互方式">
+              <a href="/2019/12/27/OS-%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EResponsderChain%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/" rel="prev" title="一种基于ResponsderChain的对象交互方式">
                 一种基于ResponsderChain的对象交互方式 <i class="fa fa-chevron-right"></i>
               </a>
             
